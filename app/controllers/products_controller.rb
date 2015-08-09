@@ -73,7 +73,7 @@ class ProductsController < ApplicationController
     end
 
     # To access our search term we can call params[:q]
-    def index
+    def search
       if params[:q]
         search_term = params[:q]
         @products = Product.where("name LIKE ?", "%#{search_term}%")
