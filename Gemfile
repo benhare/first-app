@@ -50,3 +50,7 @@ group :development, :test do
 end
 
 gem 'rack-cache'
+
+gem 'devise'
+
+gem 'cancancan', '~> 1.10'

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :users
   get 'controllers/orders_controller'
 
   get 'static_pages/landing_page'
