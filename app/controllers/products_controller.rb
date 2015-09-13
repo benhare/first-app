@@ -8,9 +8,7 @@ class ProductsController < ApplicationController
     @products = Product.limit(3)
     
   end
- def index
-    @comment = Comment.paginate(:page => params[:page], :per_page => 5)
-  end
+
   # GET /products/1
   # GET /products/1.json
   def show

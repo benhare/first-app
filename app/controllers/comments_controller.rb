@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 
   def index
-    @comment = Comments.paginate(:page => params[:page], :per_page => 5)
+    @comment = Comment.paginate(:page => params[:page], :per_page => 5)
   end
 
   def create
@@ -20,6 +20,10 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+  @comment = Comment.find(params[:id])
+    product = @comment.product
+    @comment.destroy
+    redirect_to product
   end
 
   private
