@@ -53,4 +53,6 @@ gem 'rack-cache'
 
 gem 'devise'
 
+gem 'will_paginate'
+
 gem 'cancancan', '~> 1.10'
