@@ -21,7 +21,8 @@
               <li><%= link_to "Contact",  static_pages_contact_path %></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li> <% if user_signed_in? %>
+            <li> 
+              <% if user_signed_in? %>
                 <li>
                 <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
                 </li>
