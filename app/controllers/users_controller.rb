@@ -2,11 +2,6 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
   
-  class AddAdminFlagToUsers < ActiveRecord::Migration
-    def change
-      add_column :users, :admin, :boolean, default: false, null: false
-    end
-  end
 
   # GET /users
   # GET /users.json

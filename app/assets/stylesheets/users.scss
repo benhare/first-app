@@ -1,3 +1,50 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//nav
+
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+
+.navbar-brand-centered {
+        position: absolute;
+        left: 50%;
+        display: block;
+        width: 160px;
+        text-align: center;
+        font-family: 'Pacifico', cursive;
+        font-size: 2.5em	;
+    }
+    .navbar>.container .navbar-brand-centered, 
+    .navbar>.container-fluid .navbar-brand-centered {
+        margin-left: -80px;
+    }
+
+    .navbar > .container .navbar-brand-centered, .navbar > .container-fluid .navbar-brand-centered {
+    margin-left: -80px;
+      padding: 23px;
+    color: black;
+	}
+
+    .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    	padding:10px;
+    }
+
+    .navbar-default {
+    	background: none;
+    }
+
+    .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: #438fb2;
+    background-color: transparent;
+    }
+
+// General Styles 
+
+@import url(https://fonts.googleapis.com/css?family=Arimo:400,400italic,700,700italic);
+
+	ul.nav.navbar-nav {
+		font-family: 'Arimo', sans-serif;
+		font-weight: 500;
+	}

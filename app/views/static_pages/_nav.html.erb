@@ -1,28 +1,28 @@
- <!-- Static navbar -->
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Project name</a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
+
+
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-brand-centered">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand navbar-brand-centered">wknds</div>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-brand-centered">
+          <ul class="nav navbar-nav">
               <li class="active"><%= link_to "Home", static_pages_index_path %></li>
               <li><%= link_to "About", static_pages_about_path %></li>
+              <li><%= link_to "Products", products_path %></li>
               <li><%= link_to "Contact",  static_pages_contact_path %></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <%= form_tag("/products", method: "get") do %>
-                <%= label_tag(:q, "Search for:") %>
-                <%= text_field_tag(:q) %>
-                <%= submit_tag("Search") %>
-              <% end %>
-              <% if user_signed_in? %>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li> <% if user_signed_in? %>
                 <li>
                 <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
                 </li>
@@ -31,7 +31,14 @@
                 <%= link_to('Login', new_user_session_path) %>  
                 </li>
               <% end %>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
-      </nav>
+            </li>
+            <li>
+              <%= form_tag("/products", method: "get") do %>
+                <%= text_field_tag(:q) %>
+                <%= submit_tag("Search") %>
+              <% end %>
+            </li>         
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
