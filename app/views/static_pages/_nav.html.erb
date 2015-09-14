@@ -18,7 +18,6 @@
           <ul class="nav navbar-nav">
               <li class="active"><%= link_to "Home", static_pages_index_path %></li>
               <li><%= link_to "About", static_pages_about_path %></li>
-              <li><%= link_to "Products", products_path %></li>
               <li><%= link_to "Contact",  static_pages_contact_path %></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -33,9 +32,11 @@
               <% end %>
             </li>
             <li>
-              <%= form_tag("/products", method: "get") do %>
+              <%= form_tag("/products", method: "get", :class => 'form-group has-feedback') do %>
                 <%= text_field_tag(:q) %>
-                <%= submit_tag("Search") %>
+                <%= button_tag(type: "submit", class: "btn btn-default", id: "search-box") do %>
+    <i class="glyphicon glyphicon-search"></i>
+<% end %>
               <% end %>
             </li>         
           </ul>
