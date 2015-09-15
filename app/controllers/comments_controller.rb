@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 
-  def index
-    @comments = @products.comments.paginate(:page => params[:page], :per_page => 5)
+  def show
+    @comments = @product.comments.paginate(per_page: 5, page:params[:page]).order("created_at DESC")
   end
 
   def create
