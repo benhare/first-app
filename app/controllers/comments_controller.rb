@@ -1,8 +1,5 @@
 class CommentsController < ApplicationController
 
-  def show
-    @comments = @product.comments.paginate(per_page: 5, page:params[:page]).order("created_at DESC")
-  end
 
   def create
     @product = Product.find(params[:product_id])
